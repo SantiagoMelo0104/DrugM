@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useMsal, useMsalAuthentication} from "@azure/msal-react";
+import {useMsalAuthentication} from "@azure/msal-react";
 import { InteractionType} from "@azure/msal-browser";
 
 function App() {
