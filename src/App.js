@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { useMsal, useMsalAuthentication} from "@azure/msal-react";
+import { InteractionType} from "@azure/msal-browser";
 
 function App() {
+  useMsalAuthentication(InteractionType.Redirect);
+
   return (
     <div className="App">
       <header className="App-header">
