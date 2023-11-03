@@ -1,6 +1,5 @@
 
-import { LogLevel } from "@azure/msal-browser";
-
+import {LogLevel} from "@azure/msal-browser";
 
 export const msalConfig = {
     auth: {
@@ -39,6 +38,7 @@ export const msalConfig = {
     }
 };
 
+
 export const loginRequest = {
     scopes: ["User.Read"]
 };
@@ -46,3 +46,4 @@ export const loginRequest = {
 export const graphConfig = {
     graphMeEndpoint: "Enter_the_Graph_Endpoint_Herev1.0/me"
 };
+

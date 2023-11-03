@@ -1,29 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import {useMsalAuthentication} from "@azure/msal-react";
-import { InteractionType} from "@azure/msal-browser";
+import {
+    AuthenticatedTemplate,
+    UnauthenticatedTemplate,
+    useMsalAuthentication
+} from "@azure/msal-react";
+import React from 'react';
+import {InteractionType} from "@azure/msal-browser";
 
-function App() {
-  useMsalAuthentication(InteractionType.Redirect);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const MainContent = () => {
+    useMsalAuthentication(InteractionType.Redirect);
+    return (
+        <div className="App">
+            <AuthenticatedTemplate>
+                <h1>Iniciaste session :3</h1>
+            </AuthenticatedTemplate>
+            <UnauthenticatedTemplate>
+                <h1> INICIA SESSION !!! </h1>
+            </UnauthenticatedTemplate>
+        </div>
+    );
+};
+
+export default function App() {
+    return (
+        <MainContent/>
+    );
 }
-
-export default App;
